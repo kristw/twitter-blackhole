@@ -1,16 +1,17 @@
 {
-  "name": "av-fetcher",
-  "version": "1.0.0",
+  "name": "twitter-blackhole",
+  "version": "0.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "@kristw",
   "license": "MIT",
   "dependencies": {
     "angular": "^1.4.1",
     "http-agent": "^0.1.2",
+    "minimist": "^1.1.1",
     "node-jsdom": "^3.1.5",
     "promise": "^7.0.3",
     "request": "^2.58.0"

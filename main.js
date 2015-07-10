@@ -5,9 +5,15 @@ var jsdom = require('node-jsdom').jsdom;
 var Promise = require('promise');
 var fs = require('fs');
 var request = require('request');
+var argv = require('minimist')(process.argv.slice(2));
+
+// This is the tweet in question
+var leaf = argv.url || 'https://twitter.com/trebor/status/619372372731138048';
+var outputPath = argv.output || 'test.json';
+
+// How things actually work, if you care enough
 
 var PREFIX = 'https://twitter.com';
-var root = 'https://twitter.com/trebor/status/619372372731138048';
 
 function fetch(tweet){
   return new Promise(function(resolve, reject){
@@ -47,7 +53,7 @@ function fetch(tweet){
 
 function writeOutput(obj){
   output = JSON.stringify(obj, null, 2);
-  fs.writeFileSync('output/tweets.json', output, 'utf-8');
+  fs.writeFileSync(outputPath, output, 'utf-8');
 }
 
 var level = 0;
@@ -80,4 +86,4 @@ function trace(url){
     });
 }
 
-trace(root);
+trace(leaf);

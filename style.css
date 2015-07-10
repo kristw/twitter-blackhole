@@ -1,0 +1,40 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+a, a:link, a:visited{
+  text-decoration: none;
+  color: #00acee;
+}
+
+.tweet{
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.tweet:nth-child(odd){
+  background-color: #eee;
+}
+.tweet:nth-child(even){
+  background-color: #ddd;
+}
+
+.tweet-text a{
+  font-family: Georgia, serif;
+  color: #555;
+}
+
+.tweet-text a:hover{
+  color: #222;
+}
+
+.full-name{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+
+.user-name{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}

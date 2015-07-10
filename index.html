@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>What the ....</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body ng-app="app">
+    <div ng-controller="mainCtrl">
+      <div ng-repeat="tweet in tweets" class="tweet" ng-style="{'padding-left': (10 + $index * 10) + 'px'}">
+          <div class="tweet-text">
+            <a ng-href="{{tweet.url}}">
+              {{tweet.text}}
+            </a>
+          </div>
+          <div>
+            <span class="full-name">
+              &mdash;{{tweet.fullName}}
+            </span>
+            <span class="user-name">
+              /
+              <a ng-href="https://twitter.com/{{tweet.userName}}">
+                {{tweet.userName}}
+              </a>
+            </span>
+          </div>
+      </div>
+    </div>
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

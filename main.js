@@ -56,6 +56,7 @@ function fetch(tweet){
               text: text,
               fullName: fullName,
               userName: userName,
+              url: tweet,
               nextURL: nextURL
             });
           }

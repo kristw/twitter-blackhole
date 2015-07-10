@@ -25,10 +25,25 @@ function fetch(tweet){
         }
         else{
           var document = window.document;
+
           var $text = document.querySelector('.js-original-tweet > .tweet-text');
           if($text){
             var text = $text.textContent;
+
+            var fullName = null;
+            try{
+              fullName = document.querySelector('.js-original-tweet .fullname').textContent;
+            }
+            catch(ex){}
+
+            var userName = null;
+            try{
+              userName = document.querySelector('.js-original-tweet .username').textContent;
+            }
+            catch(ex){}
+
             var $quotedTweet = document.querySelector('.js-original-tweet .QuoteTweet-container > .js-permalink');
+
             var nextURL = null;
             if($quotedTweet){
               try{
@@ -39,6 +54,8 @@ function fetch(tweet){
 
             resolve({
               text: text,
+              fullName: fullName,
+              userName: userName,
               nextURL: nextURL
             });
           }
@@ -58,7 +75,7 @@ function writeOutput(obj){
 
 var level = 0;
 var tweets = [];
-var limit = null; //100;
+var limit = argv.limit;
 
 function trace(url){
   fetch(url)
